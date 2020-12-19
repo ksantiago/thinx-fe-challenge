@@ -111,10 +111,10 @@ class Form extends Component {
 
         </select>
 
-        <div><a href="/">what's my size?</a></div>
-        <button>add to cart</button>
+        <div className="size-chart"><a href="/">what's my size?</a></div>
+        <button className="add-to-cart-btn">add to cart</button>
       </form>
-      <p><a href="/">build a cycle set and save up to 20%</a></p>
+      <p className="build-set-link"><a href="/">build a cycle set and save up to 20%</a></p>
       <div className="footer"></div>
     </React.Fragment>
   )
