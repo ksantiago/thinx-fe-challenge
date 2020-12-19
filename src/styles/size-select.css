@@ -1,0 +1,30 @@
+select {
+  margin-top: 1.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px 20px 10px 10px;
+  font-size: 1rem;
+  letter-spacing: .5px;
+  cursor: pointer;
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+  background-image: url("../img/down-arrow.png");
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position: 365px 13px;
+  outline: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select option {
+  font-size: 1em;
+}
+
+.selected {
+  display: none;
+}

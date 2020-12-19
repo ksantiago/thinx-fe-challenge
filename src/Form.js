@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import './styles/radio.css'
-import './styles/counter.css'
-import './styles/size.css'
+import './styles/form.css'
+import './styles/color-radio.css'
+import './styles/quantity-input.css'
+import './styles/size-select.css'
 
 class Form extends Component {
  constructor() {
   super()
   this.state = {
    color: "black",
-   quantity: 1
+   quantity: 1,
+   size: ""
   }
   this.handleChange = this.handleChange.bind(this)
   this.handleSubmit = this.handleSubmit.bind(this)
@@ -38,10 +40,8 @@ class Form extends Component {
 
  handleSubmit(e) {
   e.preventDefault()
-  console.log('add to cart')
-  this.setState({
-   color: "black"
-  })
+  console.log('send this.state to cart component')
+  console.log('will need to reset state here')
  }
 
  render() {
@@ -99,24 +99,17 @@ class Form extends Component {
        </div>
 
         <select name="size" className="select">
-         <option disabled selected>size</option>
-         <option value="honda">honda</option>
-         <option value="toyota">toyota</option>
-         <option value="mazda">mazda</option>
+          <option disabled selected>size</option>
+          <option value="xxs">XXS</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="l">L</option>
+          <option value="xl">XL</option>
+          <option value="xxl">XXL</option>
+          <option value="3xl">3XL</option>
 
         </select>
 
-        {/* <div className="size">
-         <select name="size" className="size-select">
-          <option disabled selected>size</option>
-          <option value="xxs">xx-small</option>
-          <option value="xs">x-small</option>
-          <option value="small">small</option>
-          <option value="medium">medium</option>
-          <option value="large">large</option>
-          <option value="xl">x-large</option>
-         </select>
-        </div> */}
         <div><a href="/">what's my size?</a></div>
         <button>add to cart</button>
       </form>
