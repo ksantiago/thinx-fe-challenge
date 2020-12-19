@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './styles/radio.css'
 import './styles/counter.css'
+import './styles/size.css'
 
 class Form extends Component {
  constructor() {
@@ -22,9 +23,11 @@ class Form extends Component {
  }
 
  subtractOne(e) {
-  this.setState({
-   quantity: this.state.quantity - 1
-  })
+  if (this.state.quantity > 1) {
+   this.setState({
+    quantity: this.state.quantity - 1
+   })
+  }
  }
 
  addOne() {
@@ -42,6 +45,9 @@ class Form extends Component {
  }
 
  render() {
+
+  const qty = `quantity ( ${this.state.quantity} )`
+  console.log(qty)
   return (
     <React.Fragment>
       <p>$35.00</p>
@@ -86,21 +92,36 @@ class Form extends Component {
 
         </div>
 
+       <div className="quantity">
+          <button className="btn minus-btn disabled" type="button" onClick={this.subtractOne}>&minus;</button>
+          <input type="text" id="qty-input" name="quantity" value={qty} readOnly="readonly" />
+          <button className="btn plus-btn disabled" type="button" onClick={this.addOne}>&#x002B;</button>
+       </div>
 
-        <div className="quantity">
-         <div className="minus" onClick={this.subtractOne}> &minus; </div>
-         <div className="count">quantity (&nbsp;{this.state.quantity}&nbsp;)</div>
-         <div className="plus" onClick={this.addOne}> &#x002B; </div>
-        </div>
+        <select name="size" className="select">
+         <option disabled selected>size</option>
+         <option value="honda">honda</option>
+         <option value="toyota">toyota</option>
+         <option value="mazda">mazda</option>
 
+        </select>
 
-        <div className="size">
-         Size Select
-        </div>
+        {/* <div className="size">
+         <select name="size" className="size-select">
+          <option disabled selected>size</option>
+          <option value="xxs">xx-small</option>
+          <option value="xs">x-small</option>
+          <option value="small">small</option>
+          <option value="medium">medium</option>
+          <option value="large">large</option>
+          <option value="xl">x-large</option>
+         </select>
+        </div> */}
         <div><a href="/">what's my size?</a></div>
         <button>add to cart</button>
       </form>
       <p><a href="/">build a cycle set and save up to 20%</a></p>
+      <div className="footer"></div>
     </React.Fragment>
   )
  }

@@ -1,15 +1,12 @@
-.quantity {
+/* .quantity {
   display: flex;
   font-size: 20px;
   margin-top: 1em;
   width: 450px;
 }
 
-.quantity > div {
-}
-
 .count {
- width: 300px;
+ width: 288px;
  padding: .8em;
  text-align: center;
  border-top: 1px solid black;
@@ -21,4 +18,35 @@
  cursor: pointer;
  padding: .8em;
  border: 1px solid black;
+ width: 50px;
+} */
+
+.quantity {
+ display: flex;
+ margin-top: 1.5em;
+}
+
+.quantity button {
+  width: 45px;
+  height: 45px;
+  border: 1px solid black;
+  color: black;
+  border-radius: 0;
+  background: white;
+}
+
+.quantity input {
+  border: none;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+  width: 325px;
+  font-size: 20px;
+  color: black;
+  font-weight: 300;
+
+}
+
+.quantity input:focus {
+  outline: none;
 }

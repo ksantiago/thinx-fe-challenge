@@ -57,5 +57,6 @@ table {
 /* end of reset */
 
 html {
-  font-family: "Graphik-Medium";
+		font-family: "Graphik-Medium";
+		margin-bottom: 200px;
 }
