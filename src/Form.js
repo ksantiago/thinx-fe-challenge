@@ -1,19 +1,35 @@
 import React, { Component } from 'react'
+import './styles/radio.css'
+import './styles/counter.css'
 
 class Form extends Component {
  constructor() {
   super()
   this.state = {
-   color: "black"
+   color: "black",
+   quantity: 1
   }
   this.handleChange = this.handleChange.bind(this)
   this.handleSubmit = this.handleSubmit.bind(this)
+  this.subtractOne = this.subtractOne.bind(this)
+  this.addOne = this.addOne.bind(this)
  }
 
  handleChange(e) {
-  console.log('clicking')
   this.setState({
    [e.target.name]: e.target.value
+  })
+ }
+
+ subtractOne(e) {
+  this.setState({
+   quantity: this.state.quantity - 1
+  })
+ }
+
+ addOne() {
+  this.setState({
+   quantity: this.state.quantity + 1
   })
  }
 
@@ -71,8 +87,16 @@ class Form extends Component {
         </div>
 
 
-        <div>Counter</div>
-        <div>Size Select</div>
+        <div className="quantity">
+         <div className="minus" onClick={this.subtractOne}> &minus; </div>
+         <div className="count">quantity (&nbsp;{this.state.quantity}&nbsp;)</div>
+         <div className="plus" onClick={this.addOne}> &#x002B; </div>
+        </div>
+
+
+        <div className="size">
+         Size Select
+        </div>
         <div><a href="/">what's my size?</a></div>
         <button>add to cart</button>
       </form>

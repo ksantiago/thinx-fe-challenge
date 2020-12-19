@@ -1,0 +1,24 @@
+.quantity {
+  display: flex;
+  font-size: 20px;
+  margin-top: 1em;
+  width: 450px;
+}
+
+.quantity > div {
+}
+
+.count {
+ width: 300px;
+ padding: .8em;
+ text-align: center;
+ border-top: 1px solid black;
+ border-bottom: 1px solid black;
+}
+
+.minus, .plus {
+ cursor: hand;
+ cursor: pointer;
+ padding: .8em;
+ border: 1px solid black;
+}

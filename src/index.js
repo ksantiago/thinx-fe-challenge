@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './styles/reset.css'
-import './styles/index.css'
 import Description from './Description'
 import {Images} from './Images'
 import Form from './Form'

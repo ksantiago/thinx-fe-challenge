@@ -1,11 +1,8 @@
-
-html {
-  font-family: "Graphik-Medium";
-}
-
 /* color radio buttons */
 .radio {
   display: inline-flex;
+  margin-top: 1em;
+  width: 420px;
 }
 
 .radio__input {
@@ -41,8 +38,9 @@ html {
 }
 
 .each-radio {
-  padding: .3em;
-  width: 9em;
+  /* width: 9em; */
+  width: 160px;
+  font-size: 20px;
 }
 
 .each-radio.blk {
@@ -59,8 +57,7 @@ html {
 }
  
 .radio__label {
-  padding: .3em;
-  padding-top: .8em;
+  padding: .8em .3em .3em .8em;
   display: inline-flex;
   cursor: pointer;
   cursor: hand;
@@ -81,9 +78,10 @@ html {
 }
 
 .text-label {
-  border: 2px solid black;
-  padding: 1em .5em;
-  width: 8em;
+  border: 1px solid black;
+  padding: .8em .3em .3em .5em;
+  width: 150px;
+  font-size: 20px;
 
 }
 
