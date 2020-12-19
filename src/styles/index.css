@@ -1,14 +1,90 @@
-@font-face {
-  font-family: 'Graphik-Medium';
-  font-style: normal;
-  src: local('Graphik-Medium'), url('../fonts/Graphik-Medium.otf') format('opentype');
-  src: local('Graphik-Medium'), url('../fonts/Graphik-Medium.woff') format('woff');
-  src: local('Graphik-Medium'), url('../fonts/Graphik-Medium.otf') format('truetype');
+
+html {
+  font-family: "Graphik-Medium";
 }
 
-body {
- font-family: 'Graphik-Medium';
+/* color radio buttons */
+.radio {
+  display: inline-flex;
 }
 
-section {
+.radio__input {
+  display: none;
 }
+
+.radio_inner {
+  width: 3em;
+  height: 1.5em;
+  position: relative;
+}
+
+.radio_inner::after {
+  vertical-align: middle;
+  opacity: 0;
+  content: "";
+  width: 15px;
+  height: 15px;
+  /* position check */
+  background-color: transparent;
+  display: inline-block;
+  position: absolute;
+  left: 1em;
+  top: 0px;
+  /* short arm of checkmark */
+  width: 5px;
+  /* long arm of checkmark */
+  height: 9px;
+  transtransform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.each-radio {
+  padding: .3em;
+  width: 9em;
+}
+
+.each-radio.blk {
+  background: black;
+  color: white;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.each-radio.beige {
+  background: beige;
+  border: 1px solid black;
+  overflow: hidden;
+}
+ 
+.radio__label {
+  padding: .3em;
+  padding-top: .8em;
+  display: inline-flex;
+  cursor: pointer;
+  cursor: hand;
+  z-index: 1;
+}
+
+/* sets opacity and color of checkmarks */
+#beige_radio:checked + .radio_inner::after {
+  opacity: 1;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+#black_radio:checked + .radio_inner::after {
+  opacity: 1;
+  border-bottom: 3px solid white;
+  border-right: 3px solid white;
+}
+
+.text-label {
+  border: 2px solid black;
+  padding: 1em .5em;
+  width: 8em;
+
+}
+
+/* end of radio buttons */
