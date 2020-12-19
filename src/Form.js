@@ -45,6 +45,7 @@ class Form extends Component {
  }
 
  render() {
+   console.log(this.state)
 
   const qty = `quantity ( ${this.state.quantity} )`
   console.log(qty)
@@ -98,8 +99,8 @@ class Form extends Component {
           <button className="btn plus-btn disabled" type="button" onClick={this.addOne}>&#x002B;</button>
        </div>
 
-        <select name="size" className="select">
-          <option disabled selected>size</option>
+        <select name="size" onChange={this.handleChange} className="select">
+          <option disabled value="size">size</option>
           <option value="xxs">XXS</option>
           <option value="s">S</option>
           <option value="m">M</option>
