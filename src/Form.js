@@ -74,6 +74,7 @@ function Form () {
                 selectedSize={size}
                 dropDown={dropDown}
                 selectSize={selectSize}
+                setShowSizes={setShowSizes}
              />
            </div>
            <div className="size-error">{cartInfoText}</div>

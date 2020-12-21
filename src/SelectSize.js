@@ -22,11 +22,11 @@ const useClickOutside = (handler) => {
 }
 
 const SelectSize = (props) => {
-  const {selectedSize, sizes, showSizes, dropDown, selectSize, sizeMenuRef} = props
+  const {selectedSize, sizes, showSizes, dropDown, setShowSizes, selectSize, sizeMenuRef} = props
   
 
   let domNode = useClickOutside(() => {
-    dropDown()
+    setShowSizes(false)
   })
 
   return (
