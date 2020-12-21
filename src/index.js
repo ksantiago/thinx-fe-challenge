@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import './styles/reset.css'
 import Description from './Description'
-import {Images} from './Images'
+import Carousel from './Carousel'
 import Form from './Form'
 
 function App() {
   return (
     <main>
       <Description />
-      <Images />
+      <Carousel />
       <Form />
     </main>
   );

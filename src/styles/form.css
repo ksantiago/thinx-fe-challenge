@@ -1,14 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 form {
   width: 400px;
+  padding-left: 10px;
+}
+
+.price {
+  font-size: 1.5em;
 }
 
 .size-chart {
   width: 100%;
-  margin-top: 1.5em;
+  margin-top: 7em;
   font-size: 14px;
   color: black;
 }
 
+.size-chart a,
 .size-chart a:hover,
 .size-chart a:visited,
 .size-chart a:active {
@@ -30,6 +40,7 @@ form {
   font-size: 1.5em;
 }
 
+.build-set-link a,
 .build-set-link a:hover,
 .build-set-link a:visited,
 .build-set-link a:active {

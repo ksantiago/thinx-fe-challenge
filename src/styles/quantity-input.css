@@ -13,15 +13,14 @@
 }
 
 .quantity input {
+  font-size: 20px;
+  font-family: "Graphik-Medium";
   border: none;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   text-align: center;
   width: 325px;
-  font-size: 20px;
   color: black;
-  font-weight: 300;
-
 }
 
 .quantity input:focus {
