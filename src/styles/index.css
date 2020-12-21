@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Graphik-Medium';
+  font-style: normal;
+  src: local('Graphik-Medium'), url('../fonts/Graphik-Medium.otf') format('opentype');
+  src: local('Graphik-Medium'), url('../fonts/Graphik-Medium.woff') format('woff');
+  src: local('Graphik-Medium'), url('../fonts/Graphik-Medium.otf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Graphik-Medium', sans-serif;
+}
+
+html {
+  font-size: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+.flex {
+  display: flex;
+}
