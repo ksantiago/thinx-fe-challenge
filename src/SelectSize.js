@@ -1,12 +1,36 @@
 import React from 'react'
 import './styles/size-select.css'
 
+// closes the size selector when you click outside of the component
+const useClickOutside = (handler) => {
+  const domNode = React.useRef()
+
+  React.useEffect(() => {
+    let maybeHandler = (event) => {
+      if (!domNode.current.contains(event.target)) {
+        handler()
+      }
+    }
+    // clean up the listener
+    document.addEventListener("mousedown", maybeHandler)
+    return () => {
+      document.removeEventListener("mousedown", maybeHandler)
+    }
+  })
+
+  return domNode
+}
+
 const SelectSize = (props) => {
   const {selectedSize, sizes, showSizes, dropDown, selectSize, sizeMenuRef} = props
   
 
+  let domNode = useClickOutside(() => {
+    dropDown()
+  })
+
   return (
-    <div>
+    <div ref={domNode}>
       <div 
         ref={sizeMenuRef}
         className="select-box--box">

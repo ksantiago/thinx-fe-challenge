@@ -48,15 +48,7 @@ function Form () {
     }
   }
 
-  const sizeMenuRef = React.useRef()
 
-  React.useEffect(() => {
-    document.addEventListener("mousedown", (event) => {
-      if (!sizeMenuRef.current.contains(event.target)) {
-        setShowSizes(false)
-      }
-    })
-  })
 
 
   return (
@@ -82,7 +74,6 @@ function Form () {
                 selectedSize={size}
                 dropDown={dropDown}
                 selectSize={selectSize}
-                sizeMenuRef={sizeMenuRef}
              />
            </div>
            <div className="size-error">{cartInfoText}</div>
