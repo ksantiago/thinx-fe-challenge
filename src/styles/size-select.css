@@ -8,6 +8,11 @@
   padding: 0;
 }
 
+.size-error {
+  color: red;
+  margin-top: 5.5em;
+}
+
 .select-box--selected-item {
   display: inline-block;
   height: 100%;
@@ -24,6 +29,7 @@
   background: white;
   padding: 6px;
   padding-left: 20px;
+  z-index: 2;
 }
 
 .select-box--items div:last-child {
