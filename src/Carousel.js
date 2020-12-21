@@ -9,7 +9,7 @@ class Carousel extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div className="img-carousel">
         <CarouselImages />
       </div>
     )

@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import './styles/form.css'
-import './styles/color-radio.css'
-import './styles/quantity-input.css'
-import './styles/size-select.css'
 import SelectSize from './SelectSize'
 import ColorRadio from './ColorRadio'
 import QuantityInput from './QuantityInput'
@@ -40,6 +37,7 @@ function Form () {
     e.preventDefault()
     if (size.value) {
       console.log('sending color, quantity, size to cart')
+      // change button text to indicate it can take them to cart
       setBtnText("proceed to checkout")
       setCartInfoText(`size ${size.value} added to bag`)
     }
@@ -48,11 +46,8 @@ function Form () {
     }
   }
 
-
-
-
   return (
-    <React.Fragment>
+    <div className="order-info">
         <p className="price">$35.00</p>
         <form onSubmit={(e) => handleSubmit(e)}>
           <ColorRadio 
@@ -85,7 +80,7 @@ function Form () {
         </form>
         <p className="build-set-link"><a href="/">build a cycle set and save up to 20%</a></p>
         
-      </React.Fragment>
+      </div>
   )
 }
 
