@@ -2,12 +2,14 @@ import React from 'react'
 import './styles/size-select.css'
 
 const SelectSize = (props) => {
-  const {selectedSize, sizes, showSizes, dropDown, selectSize} = props
+  const {selectedSize, sizes, showSizes, dropDown, selectSize, sizeMenuRef} = props
   
 
   return (
     <div>
-      <div className="select-box--box">
+      <div 
+        ref={sizeMenuRef}
+        className="select-box--box">
 
         {/* label and arrow for selecting size */}
         <div

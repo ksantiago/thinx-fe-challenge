@@ -48,6 +48,16 @@ function Form () {
     }
   }
 
+  const sizeMenuRef = React.useRef()
+
+  React.useEffect(() => {
+    document.addEventListener("mousedown", (event) => {
+      if (!sizeMenuRef.current.contains(event.target)) {
+        setShowSizes(false)
+      }
+    })
+  })
+
 
   return (
     <React.Fragment>
@@ -67,12 +77,12 @@ function Form () {
 
           <div className="size-box">
              <SelectSize 
-               sizes={[{id: 1, value: 'XS'}, {id: 2, value: 'SM'}, {id: 3, value: 'M'}, {id: 4, value: 'L'}, {id: 5, value: 'XL'}, {id: 6, value: 'XXL'}]}
-               showSizes={showSizes} 
-               selectedSize={size}
-              dropDown={dropDown}
-              selectSize={selectSize}
-
+                sizes={[{id: 1, value: 'XS'}, {id: 2, value: 'SM'}, {id: 3, value: 'M'}, {id: 4, value: 'L'}, {id: 5, value: 'XL'}, {id: 6, value: 'XXL'}]}
+                showSizes={showSizes} 
+                selectedSize={size}
+                dropDown={dropDown}
+                selectSize={selectSize}
+                sizeMenuRef={sizeMenuRef}
              />
            </div>
            <div className="size-error">{cartInfoText}</div>
