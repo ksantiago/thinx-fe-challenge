@@ -5,8 +5,8 @@ function ProductImage(props) {
     <div className="product">
       <img src={props.src} alt={props.name} />
       <div>
-        <div><a href="/">Shop {props.name}</a></div>
-        <div>{props.description}</div>
+        <div className="product-name"><a href="/">Shop {props.name}</a></div>
+        <div className="product-desc">{props.description}</div>
       </div>
 
     </div>
