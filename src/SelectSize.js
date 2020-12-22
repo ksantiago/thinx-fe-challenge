@@ -32,7 +32,6 @@ const SelectSize = (props) => {
   return (
     <div ref={domNode}>
       <div 
-        ref={sizeMenuRef}
         className="select-box--box">
 
         {/* label and arrow for selecting size */}

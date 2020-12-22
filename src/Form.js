@@ -3,6 +3,7 @@ import './styles/form.css'
 import SelectSize from './SelectSize'
 import ColorRadio from './ColorRadio'
 import QuantityInput from './QuantityInput'
+import Description from './Description'
 
 function Form () {
   const [color, setColor] = React.useState('black')
@@ -47,6 +48,7 @@ function Form () {
   }
 
   return (
+    
     <div className="order-info">
         <p className="price">$35.00</p>
         <form onSubmit={(e) => handleSubmit(e)}>
@@ -79,8 +81,10 @@ function Form () {
           
         </form>
         <p className="build-set-link"><a href="/">build a cycle set and save up to 20%</a></p>
-        
+        <Description />
       </div>
+      
+      
   )
 }
 

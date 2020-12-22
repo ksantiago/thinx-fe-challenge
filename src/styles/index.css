@@ -15,15 +15,77 @@ html {
   font-size: 100%;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 body {
   background-color: #fff;
   color: #000;
+  width: 100vw;
 }
 
-.flex {
+main {
+  background: pink;
+}
+
+.main-content {
   display: flex;
+  justify-content: space-around;
+  position: relative;
+  height: auto;
+}
+
+.product-info {
+  width: 25%;
+  background: green;
+}
+
+.product-info:first-child {
+  position: sticky;
+  top: 20%;
+  height: 100vh;
+}
+
+.product-info:last-child {
+  display: none;
+}
+
+.img-carousel {
+  min-height: 100vh;
+  width: 50%;
+  background-color: blue;
+}
+
+.img-carousel img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .img-carousel {
+    order: -1;
+    width: 50%;
+    height: -webkit-fill-available;
+  }
+  .order-info {
+    width: 50%;
+    top: 0;
+    height: auto;
+  }
+  .product-info:first-child {
+    display: none;
+  }
+  .product-info:last-child {
+    margin-top: 1em;
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .img-carousel {
+    width: 100%;
+  }
+  .order-info {
+    width: 100%;
+  }
 }
