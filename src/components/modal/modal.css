@@ -1,0 +1,25 @@
+.modal-wrapper {
+  background: pink;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.modal-wrapper button {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  outline: none;
+}
+
+.imgBx {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.modal-content img {
+  /* margin-top: 20px; */
+}

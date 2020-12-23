@@ -64,7 +64,7 @@ function Form () {
             decrement={decrement}
           />
 
-          <div className="size-box">
+          {/* <div className="size-box"> */}
              <SelectSize 
                 sizes={[{id: 1, value: 'XS'}, {id: 2, value: 'SM'}, {id: 3, value: 'M'}, {id: 4, value: 'L'}, {id: 5, value: 'XL'}, {id: 6, value: 'XXL'}]}
                 showSizes={showSizes} 
@@ -73,7 +73,7 @@ function Form () {
                 selectSize={selectSize}
                 setShowSizes={setShowSizes}
              />
-           </div>
+           {/* </div> */}
            <div className="size-error">{cartInfoText}</div>
 
           <div className="size-chart"><a href="/">what's my size?</a></div>

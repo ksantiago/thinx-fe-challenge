@@ -6,15 +6,15 @@ const useClickOutside = (handler) => {
   const domNode = React.useRef()
 
   React.useEffect(() => {
-    let maybeHandler = (event) => {
+    let mouseDwnHandler = (event) => {
       if (!domNode.current.contains(event.target)) {
         handler()
       }
     }
+    document.addEventListener("mousedown", mouseDwnHandler)
     // clean up the listener
-    document.addEventListener("mousedown", maybeHandler)
     return () => {
-      document.removeEventListener("mousedown", maybeHandler)
+      document.removeEventListener("mousedown", mouseDwnHandler)
     }
   })
 
@@ -30,26 +30,28 @@ const SelectSize = (props) => {
   })
 
   return (
-    <div ref={domNode}>
+    <div ref={domNode} className="select-wrapper">
       <div 
         className="select-box--box">
 
         {/* label and arrow for selecting size */}
         <div
           className="select-box--container">
-          <div 
-            onClick={dropDown}    
-            className="select-box--selected-item">
-            {selectedSize.value || "size"}
-          </div>
-          <div 
-            className="select-box--arrow"
-            onClick={dropDown}    
-          >
-            <span 
-              className={`${showSizes ? 'select-box--arrow-up' : 'select-box--arrow-down'}`}>
-            </span>
-          </div>
+            <div className="select-box-label">
+              <div 
+                onClick={dropDown}    
+                className="select-box--selected-item">
+                {selectedSize.value || "size"}
+              </div>
+              <div 
+                className="select-box--arrow"
+                onClick={dropDown}    
+              >
+                <span 
+                  className={`${showSizes ? 'select-box--arrow-up' : 'select-box--arrow-down'}`}>
+                </span>
+              </div>
+            </div>
 
           {/* options for size */}
           <div 

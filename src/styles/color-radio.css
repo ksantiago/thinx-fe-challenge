@@ -40,7 +40,7 @@
 }
 
 .each-radio {
-  width: 160px;
+  width: 60%;
   
 }
 
@@ -81,7 +81,7 @@
 .text-label {
   border: 1px solid black;
   padding: .6em .3em .3em .5em;
-  width: 30%;
+  width: 120px;
 }
 
 /* end of radio buttons */

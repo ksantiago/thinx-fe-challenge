@@ -1,6 +1,7 @@
 .quantity {
  display: flex;
  margin-top: 1.5em;
+ width: 100%;
 }
 
 .quantity button {
@@ -19,7 +20,7 @@
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   text-align: center;
-  width: 325px;
+  width: 100%;
   color: black;
 }
 

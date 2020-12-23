@@ -1,0 +1,10 @@
+.img-carousel {
+  /* background: blue; */
+  margin-top: 3em;
+}
+
+.img-carousel .imgBox img {
+  cursor: zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+}
