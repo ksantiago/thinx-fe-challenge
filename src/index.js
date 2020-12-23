@@ -38,16 +38,20 @@ const images = [
 ]
 
 function App() {
-  const [showModal, setShowModal] = React.useState(false)
-  const closeModalHandler = () => setShowModal(false)
-
-  const openModalHandler = (img) => {
-    setShowModal(true)
-
-    imgRefs[img.name].current.scrollIntoView()
+  const [isModalOpen, setIsModalOpen] = React.useState(false)
+  const [img, setImg] = React.useState({})
+  const closeModalHandler = () => {
+    setIsModalOpen(false)
+    console.log(imgRefs)
+    setImg({})
+    window.scrollTo(0, 0)
   }
 
-  const [currImage, setCurrImage] = React.useState({})
+  const openModalHandler = (image) => {
+    setImg(image)
+    setIsModalOpen(true)
+  }
+
   const imgRefs = {}
   const getOrCreateImgRef = (name) => {
     if (!imgRefs.hasOwnProperty(name)) {
@@ -56,54 +60,62 @@ function App() {
     return imgRefs[name]
   }
 
-  return (
-    <main>
-      <section
-        style={{
-          display: showModal ? 'none' : '',
-          opacity: showModal ? '0' : '1',
-        }}
-        className='main-content'
-      >
-        <Description />
-        <Carousel
+  if (isModalOpen) {
+    return (
+      <main>
+        <Modal
+          img={img}
+          refs={imgRefs}
+          isModalOpen={isModalOpen}
           images={images}
-          showModal={showModal}
-          currImage={currImage}
-          setCurrImage={setCurrImage}
-          openModalHandler={openModalHandler}
+          closeModalHandler={closeModalHandler}
+          getOrCreateImgRef={getOrCreateImgRef}
         />
-        <Form />
-      </section>
+      </main>
+    )
+  } else {
+    return (
+      <main>
+        <section
+          style={{
+            display: isModalOpen ? 'none' : '',
+            opacity: isModalOpen ? '0' : '1',
+          }}
+          className='main-content'
+        >
+          <Description />
+          <Carousel
+            img={img}
+            imgRefs={imgRefs}
+            images={images}
+            isModalOpen={isModalOpen}
+            openModalHandler={openModalHandler}
+            getOrCreateImgRef={getOrCreateImgRef}
+          />
+          <Form />
+        </section>
 
-      <section
-        style={{
-          display: showModal ? 'none' : '',
-          opacity: showModal ? '0' : '1',
-          height: 0,
-        }}
-        className='other-products-container'
-      >
-        {products.map((prod) => (
-          <div className='product-box' key={prod.name}>
-            <ProductImage
-              name={prod.name}
-              description={prod.description}
-              src={prod.src}
-            />
-          </div>
-        ))}
-      </section>
-
-      <Modal
-        refs={imgRefs}
-        showModal={showModal}
-        images={images}
-        closeModalHandler={closeModalHandler}
-        getOrCreateImgRef={getOrCreateImgRef}
-      />
-    </main>
-  )
+        <section
+          style={{
+            display: isModalOpen ? 'none' : '',
+            opacity: isModalOpen ? '0' : '1',
+            height: 0,
+          }}
+          className='other-products-container'
+        >
+          {products.map((prod) => (
+            <div className='product-box' key={prod.name}>
+              <ProductImage
+                name={prod.name}
+                description={prod.description}
+                src={prod.src}
+              />
+            </div>
+          ))}
+        </section>
+      </main>
+    )
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))

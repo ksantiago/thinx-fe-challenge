@@ -11,11 +11,12 @@ class Carousel extends React.Component {
     return (
       <div className='img-carousel'>
         <Images
-          currImage={this.props.currImage}
-          setcurrImage={this.props.setCurrImage}
+          img={this.props.img}
+          ref={this.props.imgRefs}
           images={this.props.images}
-          showModal={this.props.showModal}
+          isModalOpen={this.props.isModalOpen}
           openModalHandler={this.props.openModalHandler}
+          getOrCreateImgRef={this.props.getOrCreateImgRef}
         />
       </div>
     )

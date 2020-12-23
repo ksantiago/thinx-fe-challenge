@@ -1,9 +1,22 @@
 .img-carousel {
-  /* background: blue; */
   margin-top: 3em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 900px;  
+  margin-bottom: 3em;
+}
+.images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.main__imgBx {
+  width: 100%;
 }
 
-.img-carousel .imgBox img {
+.image {
   cursor: zoom-in;
   cursor: -webkit-zoom-in;
   cursor: -moz-zoom-in;

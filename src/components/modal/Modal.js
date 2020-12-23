@@ -1,29 +1,59 @@
 import React from 'react'
 import './modal.css'
 
-const Modal = ({ showModal, closeModalHandler, images, getOrCreateImgRef }) => {
+const Modal = ({
+  isModalOpen,
+  closeModalHandler,
+  images,
+  getOrCreateImgRef,
+  img,
+  refs,
+}) => {
+  // this checks if we have a reference and a target image in state(img) and scrolls to that element
+  React.useEffect(() => {
+    if (refs !== undefined) {
+      if (img !== undefined || img !== {}) {
+        let imgName = `mod_${img.name}`
+        refs[imgName].current.scrollIntoView()
+      }
+    }
+  }, [img])
+
   return (
     <div
       className='modal-wrapper'
-      style={{
-        opacity: showModal ? '1' : '0',
-        display: showModal ? 'block' : 'none',
-      }}
       onClick={closeModalHandler}
+      style={{
+        height: isModalOpen ? '100%' : '0',
+      }}
     >
-      <button type='button' className='close-modal-btn'>
+      <button
+        style={{
+          display: isModalOpen ? '' : 'none',
+        }}
+        type='button'
+        className='close-modal-btn'
+      >
         x
       </button>
 
       <div className='modal-content'>
         {images.map((img) => (
           <div
-            ref={getOrCreateImgRef(img.name)}
+            id={img.name}
             name={img.name}
-            className='imgBox'
+            className='modal-imgBx'
             key={img.name}
           >
-            <img id={img.name} src={img.src} alt={img.alt} />
+            <img
+              style={{
+                height: isModalOpen ? '100%' : '0',
+              }}
+              ref={getOrCreateImgRef(`mod_${img.name}`)}
+              src={img.src}
+              alt={img.alt}
+              className='modal-image'
+            />
           </div>
         ))}
       </div>

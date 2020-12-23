@@ -1,39 +1,32 @@
-import React, { createRef } from 'react'
+import React from 'react'
 
-const Images = (props) => {
-  const { images, currImage, setCurrImage, openModalHandler } = props
-
-  // const imgRefs = React.useRef([])
-  // // imgRefs.current = []
-
-  // const addToRefs = (el) => {
-  //   if (el && !imgRefs.current.includes(el)) {
-  //     imgRefs.current.push(el)
-  //   }
-  // }
-
-  // const imgRefs = React.useRef(images.map(() => React.createRef())
-
+const Images = ({
+  img,
+  refs,
+  images,
+  openModalHandler,
+  getOrCreateImgRef,
+  isModalOpen,
+}) => {
+  // this checks if we have a reference and a target image in state(img) and scrolls to that element
   // React.useEffect(() => {
-  //   document.addEventListener("mousedown", (event) => {
+  // if (refs !== undefined) {
+  //   // if (img !== undefined || img !== {}) {
+  //   //   let imgName = `main_${img.name}`
+  //   //   refs[imgName].current.scrollIntoView()
+  //   // }
+  //   console.log(refs)
 
-  //     if (event.target.attributes.class === "image") {
-  //       console.log('yep')
-  //     } else {
-  //       console.log('nah')
-  //     }
+  //   }
+  // }, [])
 
-  //     console.log('this is yoru event target: ', event.target, event.target.attributes.class)
-  //     // event.target.attributes.name
-  //     openModalHandler()
-  //   })
-  // })
-
+  console.log(refs)
   return (
     <div className='images'>
       {images.map((img, i) => (
-        <div className='imgBx' key={i}>
+        <div className='main__imgBx' key={i}>
           <img
+            ref={getOrCreateImgRef(`main_${img.name}`)}
             className='image'
             name={img.name}
             onClick={() => openModalHandler(img)}
