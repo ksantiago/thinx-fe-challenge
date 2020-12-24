@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom'
 import './styles/reset.css'
 import './styles/otherproducts.css'
 import Description from './Description'
-import Carousel from './Carousel'
+import ImageContainer from './ImageContainer'
 import Modal from './components/modal/Modal'
 import Form from './Form'
+import Carousel from 'react-elastic-carousel'
+import Card from './Card'
 import hiphugger from './img/bottom/thinx_productpage_-04.jpg'
 import cheeky from './img/bottom/thinx_productpage_-03.jpg'
 import thong from './img/bottom/thinx_productpage_-05.jpg'
@@ -19,6 +21,7 @@ import highwaistfront3 from './img/top/highwaist_black_front_4_1024x1024.jpg'
 import highwaistfront4 from './img/top/highwaist_black_front_1024x1024 (1).jpg'
 import highwaistback from './img/top/highwaist_black_back_1024x1024.jpg'
 import highwaistside from './img/top/highwaist_black_side_1024x1024.jpg'
+import './styles/card.css'
 
 const products = [
   { name: 'Hiphugger', description: 'heavy days', src: hiphugger },
@@ -84,14 +87,33 @@ function App() {
           className='main-content'
         >
           <Description />
-          <Carousel
-            img={img}
-            imgRefs={imgRefs}
-            images={images}
-            isModalOpen={isModalOpen}
-            openModalHandler={openModalHandler}
-            getOrCreateImgRef={getOrCreateImgRef}
-          />
+          <div className='mobile-carousel'>
+            <Carousel>
+              {images.map((img, i) => (
+                <Card
+                  img={img}
+                  refs={imgRefs}
+                  isModalOpen={isModalOpen}
+                  images={images}
+                  closeModalHandler={closeModalHandler}
+                  getOrCreateImgRef={getOrCreateImgRef}
+                  openModalHandler={openModalHandler}
+                  key={i}
+                />
+              ))}
+            </Carousel>
+          </div>
+
+          <div className='desktop-carousel'>
+            <ImageContainer
+              img={img}
+              imgRefs={imgRefs}
+              images={images}
+              isModalOpen={isModalOpen}
+              openModalHandler={openModalHandler}
+              getOrCreateImgRef={getOrCreateImgRef}
+            />
+          </div>
           <Form />
         </section>
 

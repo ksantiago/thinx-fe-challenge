@@ -15,7 +15,6 @@
 }
 
 .modal-content{
-  border: 10px solid blue;
   width: 100%;  
   display: flex;
   flex-direction: column;
@@ -23,13 +22,8 @@
 }
 
 .modal-imgBx {
-  border: 5px solid green;
   margin: 0;
   padding: 0;
   height: 120vh;
 }
 
-.modal-content img {
-  border: 2px solid red;
-  /* width: 120%; */
-}

@@ -1,8 +1,8 @@
 import React from 'react'
 import Images from './Images'
-import './styles/carousel.css'
+import './styles/imagecontainer.css'
 
-class Carousel extends React.Component {
+class ImageContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
@@ -23,4 +23,4 @@ class Carousel extends React.Component {
   }
 }
 
-export default Carousel
+export default ImageContainer
