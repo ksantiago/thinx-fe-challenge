@@ -16,20 +16,18 @@ html {
 }
 
 body {
-  background-color: #F8F8F8;
   color: #000;
   width: 100vw;
 }
 
-main {
-  /* background: pink; */
-}
 
 .main-content {
   display: flex;
   justify-content: space-around;
   position: relative;
   height: auto;
+  background: #f8f8f8;
+  padding-bottom: 2em;
 }
 
 
@@ -40,12 +38,9 @@ main {
 .product-info {
   width: 25%;
   padding-left: 50px;
-  /* background: green; */
 }
 
 .product-info h2 {
-  /* border: 2px solid red; */
-  /* margin-left: 10px; */
   font-size: 1.2em;
   
 }
@@ -65,9 +60,6 @@ main {
   display: none;
 }
 
-.img-carousel {
-  /* min-height: 100vh; */
-}
 
 .img-carousel img {
   width: 100%;
@@ -99,12 +91,6 @@ main {
   .product-info:first-child {
     display: none;
   }
-
-  /* .product-info:last-child {
-    margin-top: 1em;
-    display: block;
-    width: 100%;
-  } */
 
   .order-info .product-info {
    margin-top: 1em;

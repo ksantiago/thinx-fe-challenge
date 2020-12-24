@@ -6,9 +6,6 @@
   padding-right: 10px;
 }
 
-/* form, p {
-  padding-left: 10px;
-} */
 
 .price {
   font-size: 1.5em;
@@ -40,7 +37,7 @@
 
 .build-set-link {
   margin-top: 1.5em;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .build-set-link a,
